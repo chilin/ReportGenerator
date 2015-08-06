@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<reportConfig>
+  <sqls>
+    <add key="In_Process">
+      <![CDATA[        
+xxx
+      ]]>
+    </add>
+    <add key="Closed">
+      <![CDATA[        
+xxx
+      ]]>
+    </add>
+  </sqls>
+  <fillParams>
+    <add key="paramCount" value="2" />
+    <add key="param1" sheetIndex="1" sqlString="In_Process" rowOffset="1" columnOffset="0" columnCount="13"  batchSize = "1000" />
+    <add key="param2" sheetIndex="2" sqlString="Closed" rowOffset="1" columnOffset="0" columnCount="8"  batchSize = "1000" />
+  </fillParams>
+  <process>
+    <add type="DrawLine" paramIndex="0" />
+    <add type="DrawLine" paramIndex="1" color="51,51,153" />
+    <add type="PivotTableRefresh" id="PivotTable6" sheetIndex="4" sourceSheet="1" sourceTable="Table1" />
+    <add type="PivotTableRefresh" id="PivotTable7" sheetIndex="4" sourceSheet="1" sourceTable="Table1" />
+    <add type="PivotTableRefresh" id="PivotTable8" sheetIndex="4" sourceSheet="1" sourceTable="Table1" />
+  </process>
+</reportConfig>
